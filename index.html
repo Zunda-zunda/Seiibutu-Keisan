@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,126 @@
     <title>Vite App</title>
   </head>
   <body>
+
+
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神 聖遺物スコア計算機</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+    <div class="container">
+        <h1>原神 聖遺物スコア計算機</h1>
+
+        <!-- プルダウンで選択項目を選択 -->
+        <label for="globalOptionSelect">選択項目を選択：</label>
+        <select id="global-OptionSelect">
+            <option value="攻撃力%">攻撃力%</option>
+            <option value="HP%">HP%</option>
+            <option value="防御力%">防御力%</option>
+            <option value="元素熟知">元素熟知</option>
+            <option value="チャージ効率">チャージ効率</option>
+            <option value="率ダメのみ">率ダメのみ</option>
+        </select>
+
+        <!-- 聖遺物入力フォーム -->
+        <div id="artifacts">
+            <!-- 花 -->
+            <h2>花</h2>
+            <div class="artifact-form" id="flower">
+                <label for="critRateFlower">会心率 (%)</label>
+                <input type="number" id="critRateFlower" step="0.1" min="0">
+
+                <label for="critDmgFlower">会心ダメージ (%)</label>
+                <input type="number" id="critDmgFlower" step="0.1" min="0">
+
+                <label for="thirdOptionFlower">選択項目</label>
+                <input type="number" id="thirdOptionFlower" step="0.1" min="0">
+            </div>
+
+            <!-- 羽 -->
+            <h2>羽</h2>
+            <div class="artifact-form" id="plume">
+                <label for="critRatePlume">会心率 (%)</label>
+                <input type="number" id="critRatePlume" step="0.1" min="0">
+
+                <label for="critDmgPlume">会心ダメージ (%)</label>
+                <input type="number" id="critDmgPlume" step="0.1" min="0">
+
+                <label for="thirdOptionPlume">選択項目</label>
+                <input type="number" id="thirdOptionPlume" step="0.1" min="0">
+            </div>
+
+            <!-- 時計 -->
+            <h2>時計</h2>
+            <div class="artifact-form" id="sands">
+                <label for="critRateSands">会心率 (%)</label>
+                <input type="number" id="critRateSands" step="0.1" min="0">
+
+                <label for="critDmgSands">会心ダメージ (%)</label>
+                <input type="number" id="critDmgSands" step="0.1" min="0">
+
+                <label for="thirdOptionSands">選択項目</label>
+                <input type="number" id="thirdOptionSands" step="0.1" min="0">
+            </div>
+
+            <!-- 杯 -->
+            <h2>杯</h2>
+            <div class="artifact-form" id="goblet">
+                <label for="critRateGoblet">会心率 (%)</label>
+                <input type="number" id="critRateGoblet" step="0.1" min="0">
+
+                <label for="critDmgGoblet">会心ダメージ (%)</label>
+                <input type="number" id="critDmgGoblet" step="0.1" min="0">
+
+                <label for="thirdOptionGoblet">選択項目</label>
+                <input type="number" id="thirdOptionGoblet" step="0.1" min="0">
+            </div>
+
+            <!-- 冠 -->
+            <h2>冠</h2>
+            <div class="artifact-form" id="circlet">
+                <label for="critRateCirclet">会心率 (%)</label>
+                <input type="number" id="critRateCirclet" step="0.1" min="0">
+
+                <label for="critDmgCirclet">会心ダメージ (%)</label>
+                <input type="number" id="critDmgCirclet" step="0.1" min="0">
+
+                <label for="thirdOptionCirclet">選択項目</label>
+                <input type="number" id="thirdOptionCirclet" step="0.1" min="0">
+            </div>
+        </div>
+
+        <!-- 計算・保存ボタン -->
+        <button id="calculate-AllScores">全てのスコア計算</button>
+        <button id="save-Score">データ保存</button>
+        <button id="remove-Score">データ削除</button>
+
+
+        <!-- 結果表示 -->
+        <div class="result" id="result">
+            <p id="flowerScore">花のスコア: 0</p>
+            <p id="plumeScore">羽のスコア: 0</p>
+            <p id="sandsScore">時計のスコア: 0</p>
+            <p id="gobletScore">杯のスコア: 0</p>
+            <p id="circletScore">冠のスコア: 0</p>
+            <p id="totalScore">合計スコア: 0</p>
+        </div>
+
+        <!-- ランキング表示 -->
+        <h2>ランキング</h2>
+        <div id="ranking"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
 </html>
